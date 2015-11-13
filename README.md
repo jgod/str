@@ -29,7 +29,7 @@ str::trimRight(" x ") == " x"
 str::trimRight("Joe Shmoe", ' ') == "Joe"
 str::removeWhitespace("Joe   Shmoe") == "JoeShmoe"
 
-// replacement functions replace all occurences
+// replacement functions replace all occurrences
 str::replace("aabbccdd", 'a', 'x') == "xxbbccdd"
 std::replace("abcd", "ab", "xy") == "xycd"
 std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
