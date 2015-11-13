@@ -71,14 +71,6 @@ TEST_CASE("replacement")
   {
     REQUIRE(str::replace(SRC, "be", "test") == "To test or not to test?");
   }
-  SECTION("all slashes")
-  {
-    REQUIRE(str::replaceSlashes("This/is/a/test", ' ') == "This is a test");
-  }
-  SECTION("all spaces")
-  {
-    REQUIRE(str::replaceSpaces(SRC, '+') == "To+be+or+not+to+be?");
-  }
   SECTION("truncate")
   {
     REQUIRE(str::truncate(SRC, 8, "...") == "To be or...");
