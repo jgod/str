@@ -10,7 +10,7 @@ C++11 compiler
 
 All methods for string transformation return new strings.
 
-```
+```cpp
 #include "str.h"
 using namespace jgod;
 
