@@ -33,8 +33,6 @@ str::removeWhitespace("Joe   Shmoe") == "JoeShmoe"
 str::replace("aabbccdd", 'a', 'x') == "xxbbccdd"
 std::replace("abcd", "ab", "xy") == "xycd"
 std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
-std::replaceSlashes("a/b/c/d") == "abcd"
-std::replaceSpaces("a b c d") = "abcd"
 std::truncate("abcdefghijk", 6) == "abcdef"
 std::truncate("abcdefghijk", 6, "...") == "abcdef..."
 ```
