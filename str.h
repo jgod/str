@@ -133,10 +133,6 @@ namespace jgod { namespace str {
       return s;
     }
 
-    /** Replaces all slashes in a string. */
-    inline std::string replaceSlashes(const std::string s, const char r) {return replace(s, '/', r);}
-    /** Replaces all spaces in a string. */
-    inline std::string replaceSpaces(const std::string s, const char r) {return replace(s, ' ', r);}
     /** Replaces everything after a maxLen in a string with a replacement substring (default: ""). */
     inline std::string truncate(std::string s, const int maxLen, const std::string &r = "") {
       if (s.length() > maxLen && maxLen > 0) {s = s.substr(0, maxLen) + r;}
