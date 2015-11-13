@@ -63,11 +63,11 @@ TEST_CASE("replacement")
 {
   const auto SRC = "To be or not to be?";
 
-  SECTION("all occurences with character")
+  SECTION("all occurrences with character")
   {
     REQUIRE(str::replace(SRC, "t", "b") == "To be or nob bo be?");
   }
-  SECTION("all occurences with string")
+  SECTION("all occurrences with string")
   {
     REQUIRE(str::replace(SRC, "be", "test") == "To test or not to test?");
   }
