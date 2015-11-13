@@ -8,7 +8,7 @@ C++11 compiler
 
 ## usage
 
-All methods for string transformation return new strings.
+Note: all methods for string transformation return new strings.
 
 ```cpp
 #include "str.h"
@@ -32,11 +32,11 @@ str::removeWhitespace("Joe   Shmoe") == "JoeShmoe"
 // replacement functions replace all occurences
 str::replace("aabbccdd", 'a', 'x') == "xxbbccdd"
 std::replace("abcd", "ab", "xy") == "xycd"
-std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd";
-std::replaceSlashes("a/b/c/d") == "abcd";
-std::replaceSpaces("a b c d") = "abcd";
-std::truncate("abcdefghijk", 6) == "abcdef";
-std::truncate("abcdefghijk", 6, "...") == "abcdef...";
+std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
+std::replaceSlashes("a/b/c/d") == "abcd"
+std::replaceSpaces("a b c d") = "abcd"
+std::truncate("abcdefghijk", 6) == "abcdef"
+std::truncate("abcdefghijk", 6, "...") == "abcdef..."
 ```
 
 ## license
