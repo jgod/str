@@ -21,6 +21,14 @@ TEST_CASE("position")
     SECTION("not found returns -1") {REQUIRE(str::indexOf("mystring", "pizza") == -1);}
     SECTION("found returns index") {REQUIRE(str::indexOf("pizza pie", "pie") == 6);}
   }
+  SECTION("lastIndexOf")
+  {
+    SECTION("empty strings returns -1") {REQUIRE(str::lastIndexOf("", "search") == -1);}
+    SECTION("empty substrings returns -1") {REQUIRE(str::lastIndexOf("mystring", "") == -1);}
+    SECTION("substrings longer than string return -1") {REQUIRE(str::lastIndexOf("str", "string") == -1);}
+    SECTION("not found returns -1") {REQUIRE(str::lastIndexOf("mystring", "pizza") == -1);}
+    SECTION("found returns index") {REQUIRE(str::lastIndexOf("pizza pie", "p") == 6);}
+  }
   SECTION("startsWith")
   {
     SECTION("does") {REQUIRE(str::startsWith("catdog", "cat"));}
