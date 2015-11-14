@@ -50,7 +50,7 @@ namespace jgod { namespace str {
     /** Returns whether a string ends with a substring. */
     inline bool endsWith(const std::string &s, const std::string &suf) {
       if (s.length() < suf.length()) return false;
-      return (0 == s.compare(s.length() - suf.length(), suf.length(), suf));
+      return s.compare(s.length() - suf.length(), suf.length(), suf) == 0;
     }
 
 #pragma mark - Casing
@@ -88,7 +88,6 @@ namespace jgod { namespace str {
     }
     /** Trims whitespace to the beginning and end of a string. */
     inline std::string trim(const std::string s) {return trimRight(trimLeft(s));}
-
     /** Removes whitespace from a string. */
     inline std::string removeWhitespace(std::string s) {
       s.erase(std::remove_if(std::begin(s),
@@ -107,7 +106,6 @@ namespace jgod { namespace str {
       }
       return strs;
     }
-
     /** Splits strings based on a delimiter. */
     inline std::vector<std::string> split(const std::string &s, const std::string &delim = "\n") {
       std::vector<std::string> strs;
@@ -132,16 +130,14 @@ namespace jgod { namespace str {
       }
       return s;
     }
-
     /** Replaces all occurrences of multiple searches with a replacement substring. */
     inline std::string replace(std::string s, std::initializer_list<std::string> searches, const std::string &r) {
       for (auto &i : searches) {s = replace(s, i, r);}
       return s;
     }
-
     /** Replaces everything after a maxLen in a string with a replacement substring (default: ""). */
     inline std::string truncate(std::string s, const int maxLen, const std::string &r = "") {
-      if (s.length() > maxLen && maxLen > 0) {s = s.substr(0, maxLen) + r;}
+      if (s.length() > maxLen && maxLen > 0) s = s.substr(0, maxLen) + r;
       return s;
     }
 }}
