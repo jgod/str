@@ -53,7 +53,7 @@ namespace jgod { namespace str {
       return s.compare(s.length() - suf.length(), suf.length(), suf) == 0;
     }
     /** Returns whether a string contains a certain substring. */
-    inline bool contains(const std::string &s, const std::string &sub) {
+    inline bool includes(const std::string &s, const std::string &sub) {
       return indexOf(s, sub) != -1;
     }
 

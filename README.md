@@ -17,7 +17,7 @@ using namespace jgod;
 str::indexOf("mystring", "pizza") == -1
 str::indexOf("catdog", "dog") == 3
 str::lastIndexOf("pizza", "z") == 3
-str::contains("code", "cod") == true
+str::includes("code", "cod") == true
 
 str::startsWith("pizza", "pi") == true
 str::endsWith("antidisestablishmentarianism", "ism") == true
