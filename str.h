@@ -39,6 +39,12 @@ namespace jgod { namespace str {
       auto pos = s.find(sub);
       return (pos != std::string::npos) ? pos : -1;
     }
+    /** Returns index of last occurrence of substring, otherwise returns -1. */
+    inline int lastIndexOf(const std::string &s, const std::string &sub) {
+      if (s == "" || sub == "" || sub.length() > s.length()) return -1;
+      auto it = std::find_end(std::begin(s), std::end(s), std::begin(sub), std::end(sub));
+      return (it != s.end()) ? (it - std::begin(s)) : -1;
+    }
     /** Returns whether a string begins with a substring. */
     inline bool startsWith(const std::string &s, const std::string &pre) {return s.find(pre) == 0;}
     /** Returns whether a string ends with a substring. */
