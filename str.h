@@ -33,7 +33,7 @@ SOFTWARE.
 
 namespace jgod { namespace str {
 #pragma mark - Position
-    /** Returns index of first occurence of substring, otherwise returns -1. */
+    /** Returns index of first occurrence of substring, otherwise returns -1. */
     inline int indexOf(const std::string s, const std::string sub) {
       if (s == "" || sub == "" || sub.length() > s.length()) return -1;
       auto pos = s.find(sub);
@@ -118,12 +118,12 @@ namespace jgod { namespace str {
     }
 
 #pragma mark - Replacement
-    /** Replaces all occurences of a search with a replacement character. */
+    /** Replaces all occurrences of a search with a replacement character. */
     inline std::string replace(std::string s, const char search, const char r) {
       std::replace(std::begin(s), std::end(s), search, r);
       return s;
     }
-    /** Replaces all occurences of a search with a replacement substring. */
+    /** Replaces all occurrences of a search with a replacement substring. */
     inline std::string replace(std::string s, const std::string &search, const std::string &r) {
       std::size_t pos = 0;
       while ((pos = s.find(search, pos)) != std::string::npos) {
@@ -133,7 +133,7 @@ namespace jgod { namespace str {
       return s;
     }
 
-    /** Replaces all occurences of multiple searches with a replacement substring. */
+    /** Replaces all occurrences of multiple searches with a replacement substring. */
     inline std::string replace(std::string s, std::initializer_list<std::string> searches, const std::string &r) {
       for (auto &i : searches) {s = replace(s, i, r);}
       return s;
