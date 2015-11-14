@@ -101,28 +101,28 @@ namespace jgod { namespace str {
 #pragma mark - Splitting
     /** Splits strings based on max line length. */
     inline std::vector<std::string> split(const std::string &s, const int maxLen) {
-      std::vector<std::string> subStrs;
+      std::vector<std::string> strs;
       for (auto i = 0; i < s.length(); i += maxLen) {
-        subStrs.push_back(s.substr(i, maxLen));
+        strs.push_back(s.substr(i, maxLen));
       }
-      return subStrs;
+      return strs;
     }
 
     /** Splits strings based on a delimiter. */
-    inline std::vector<std::string> split(const std::string &s, const char delim = '\n') {
+    inline std::vector<std::string> split(const std::string &s, const std::string &delim = "\n") {
       std::vector<std::string> strs;
-      std::istringstream f(s);
-      std::string _s;
-      while (std::getline(f, _s, delim)) {strs.push_back(_s);}
+      auto start = 0U;
+      auto end = s.find(delim);
+      while (end != std::string::npos) {
+          strs.push_back(s.substr(start, end - start));
+          start = end + delim.length();
+          end = s.find(delim, start);
+      }
+      strs.push_back(s.substr(start, end));
       return strs;
     }
 
 #pragma mark - Replacement
-    /** Replaces all occurrences of a search with a replacement character. */
-    inline std::string replace(std::string s, const char search, const char r) {
-      std::replace(std::begin(s), std::end(s), search, r);
-      return s;
-    }
     /** Replaces all occurrences of a search with a replacement substring. */
     inline std::string replace(std::string s, const std::string &search, const std::string &r) {
       std::size_t pos = 0;
