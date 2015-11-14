@@ -52,6 +52,10 @@ namespace jgod { namespace str {
       if (s.length() < suf.length()) return false;
       return s.compare(s.length() - suf.length(), suf.length(), suf) == 0;
     }
+    /** Returns whether a string contains a certain substring. */
+    inline bool contains(const std::string &s, const std::string &sub) {
+      return indexOf(s, sub) != -1;
+    }
 
 #pragma mark - Casing
     /** Converts a string to lowercase. */

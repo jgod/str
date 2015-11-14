@@ -34,6 +34,10 @@ TEST_CASE("position") {
     SECTION("does") {REQUIRE(str::endsWith("catdog", "dog"));}
     SECTION("doesn't") {REQUIRE(!str::endsWith("cat", "dog"));}
   }
+  SECTION("contains") {
+    SECTION("does") {REQUIRE(str::contains("code", "cod"));}
+    SECTION("doesn't") {REQUIRE(!str::contains("mystring", "cod"));}
+  }
 }
 
 TEST_CASE("casing") {
