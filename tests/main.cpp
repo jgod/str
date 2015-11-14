@@ -64,7 +64,7 @@ TEST_CASE("splitting")
 {
   const std::vector<std::string> RESULT = {"abcde", "fghi"};
   SECTION("based on line length") {REQUIRE(str::split("abcdefghi", 5) == RESULT);}
-  SECTION("based on delimiter") {REQUIRE(str::split("abcde/fghi", '/') == RESULT);}
+  SECTION("based on delimiter") {REQUIRE(str::split("abcde/fghi", "/") == RESULT);}
 }
 
 TEST_CASE("replacement")
