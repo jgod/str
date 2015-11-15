@@ -72,7 +72,7 @@ TEST_CASE("replacement") {
   SECTION("all occurrences with string") {
     REQUIRE(str::replace(SRC, "be", "test") == "To test or not to test?");
   }
-  SECTION("truncate") {
-    REQUIRE(str::truncate(SRC, 8, "...") == "To be or...");
+  SECTION("truncation") {
+    REQUIRE(str::trunc(SRC, 8, "...") == "To be or...");
   }
 }
