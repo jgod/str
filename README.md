@@ -29,7 +29,7 @@ str::trim(" x ") == "x"
 str::trimLeft(" x ") == "x "
 str::trimRight(" x ") == " x"
 str::trimRight("Joe Shmoe", ' ') == "Joe"
-str::removeWhitespace("Joe   Shmoe") == "JoeShmoe"
+str::compact("Joe   Shmoe") == "JoeShmoe"
 
 // replacement functions replace all occurrences
 str::replace("aabbccdd", "a", "x") == "xxbbccdd"
