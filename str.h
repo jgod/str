@@ -26,6 +26,7 @@ SOFTWARE.
 #define str_h
 
 #include <string>
+#include <vector>
 #include <algorithm>
 #include <sstream>
 #include <functional>
