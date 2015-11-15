@@ -92,7 +92,7 @@ namespace jgod { namespace str {
     /** Trims whitespace to the beginning and end of a string. */
     inline std::string trim(const std::string s) {return trimRight(trimLeft(s));}
     /** Removes whitespace from a string. */
-    inline std::string removeWhitespace(std::string s) {
+    inline std::string compact(std::string s) {
       s.erase(std::remove_if(std::begin(s),
                              std::end(s),
                              std::bind(std::isspace<char>, std::placeholders::_1, std::locale::classic())),

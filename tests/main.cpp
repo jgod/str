@@ -54,7 +54,7 @@ TEST_CASE("trimming") {
     SECTION("basic") {REQUIRE(str::trimRight(SRC) == "  mystring");}
     SECTION("delimiter") {REQUIRE(str::trimRight(SRC, "i") == "  mystr");}
   }
-  SECTION("remove whitespace") {REQUIRE(str::removeWhitespace(SRC) == "mystring");}
+  SECTION("remove whitespace") {REQUIRE(str::compact(SRC) == "mystring");}
 }
 
 TEST_CASE("splitting") {
