@@ -35,8 +35,8 @@ str::compact("Joe   Shmoe") == "JoeShmoe"
 str::replace("aabbccdd", "a", "x") == "xxbbccdd"
 std::replace("abcd", "ab", "xy") == "xycd"
 std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
-std::truncate("abcdefghijk", 6) == "abcdef"
-std::truncate("abcdefghijk", 6, "...") == "abcdef..."
+std::trunc("abcdefghijk", 6) == "abcdef"
+std::trunc("abcdefghijk", 6, "...") == "abcdef..."
 ```
 
 ## license

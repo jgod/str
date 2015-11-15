@@ -140,7 +140,7 @@ namespace jgod { namespace str {
       return s;
     }
     /** Replaces everything after a maxLen in a string with a replacement substring (default: ""). */
-    inline std::string truncate(std::string s, const int maxLen, const std::string &r = "") {
+    inline std::string trunc(std::string s, const int maxLen, const std::string &r = "") {
       if (s.length() > maxLen && maxLen > 0) s = s.substr(0, maxLen) + r;
       return s;
     }
