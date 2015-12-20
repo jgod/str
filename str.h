@@ -22,8 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#ifndef str_h
-#define str_h
+#ifndef jgod_str_h
+#define jgod_str_h
 
 #include <string>
 #include <vector>
@@ -145,4 +145,4 @@ namespace jgod { namespace str {
       return s;
     }
 }}
-#endif /* str_h */
+#endif /* jgod_str_h */
