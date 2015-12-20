@@ -37,13 +37,13 @@ namespace jgod { namespace str {
     inline int indexOf(const std::string s, const std::string sub) {
       if (s == "" || sub == "" || sub.length() > s.length()) return -1;
       auto pos = s.find(sub);
-      return (pos != std::string::npos) ? pos : -1;
+      return (pos != std::string::npos) ? static_cast<int>(pos) : -1;
     }
     /** Returns index of last occurrence of substring, otherwise returns -1. */
     inline int lastIndexOf(const std::string &s, const std::string &sub) {
       if (s == "" || sub == "" || sub.length() > s.length()) return -1;
       auto it = std::find_end(std::begin(s), std::end(s), std::begin(sub), std::end(sub));
-      return (it != s.end()) ? (it - std::begin(s)) : -1;
+      return (it != s.end()) ? static_cast<int>(it - std::begin(s)) : -1;
     }
     /** Returns whether a string begins with a substring. */
     inline bool startsWith(const std::string &s, const std::string &pre) {return s.find(pre) == 0;}
@@ -103,9 +103,9 @@ namespace jgod { namespace str {
 
 #pragma mark - Splitting
     /** Splits strings based on max line length. */
-    inline std::vector<std::string> split(const std::string &s, const int maxLen) {
+    inline std::vector<std::string> split(const std::string &s, const size_t maxLen) {
       std::vector<std::string> strs;
-      for (auto i = 0; i < s.length(); i += maxLen) {
+      for (size_t i = 0; i < s.length(); i += maxLen) {
         strs.push_back(s.substr(i, maxLen));
       }
       return strs;
@@ -117,7 +117,7 @@ namespace jgod { namespace str {
       auto end = s.find(delim);
       while (end != std::string::npos) {
           strs.push_back(s.substr(start, end - start));
-          start = end + delim.length();
+          start = static_cast<unsigned int>(end + delim.length());
           end = s.find(delim, start);
       }
       strs.push_back(s.substr(start, end));
@@ -140,7 +140,7 @@ namespace jgod { namespace str {
       return s;
     }
     /** Replaces everything after a maxLen in a string with a replacement substring (default: ""). */
-    inline std::string trunc(std::string s, const int maxLen, const std::string &r = "") {
+    inline std::string trunc(std::string s, const size_t maxLen, const std::string &r = "") {
       if (s.length() > maxLen && maxLen > 0) s = s.substr(0, maxLen) + r;
       return s;
     }

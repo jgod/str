@@ -7,7 +7,6 @@ CXXFLAGS = -stdlib=libc++ \
 -Weverything \
 -Wno-float-equal \
 -Wno-sign-compare \
--Wno-sign-conversion \
 -Wno-shorten-64-to-32 \
 -Wno-missing-prototypes \
 -Wno-exit-time-destructors \
