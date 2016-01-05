@@ -31,6 +31,9 @@ str::trimRight(" x ") == " x"
 str::trimRight("Joe Shmoe", ' ') == "Joe"
 str::compact("Joe   Shmoe") == "JoeShmoe"
 
+str::split("abcdefghi", 5) == {"abcde", "fghi"}
+str::split("/game/items/weapons/ak47", "/") == {"game", "items", "weapons", "ak47"}
+
 // replacement functions replace all occurrences
 str::replace("aabbccdd", "a", "x") == "xxbbccdd"
 std::replace("abcd", "ab", "xy") == "xycd"
