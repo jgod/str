@@ -36,10 +36,10 @@ str::split("/game/items/weapons/ak47", "/") == {"game", "items", "weapons", "ak4
 
 // replacement functions replace all occurrences
 str::replace("aabbccdd", "a", "x") == "xxbbccdd"
-std::replace("abcd", "ab", "xy") == "xycd"
-std::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
-std::trunc("abcdefghijk", 6) == "abcdef"
-std::trunc("abcdefghijk", 6, "...") == "abcdef..."
+str::replace("abcd", "ab", "xy") == "xycd"
+str::replace("abcd", {"a", "b", "c"}, "x") == "xxxd"
+str::trunc("abcdefghijk", 6) == "abcdef"
+str::trunc("abcdefghijk", 6, "...") == "abcdef..."
 ```
 
 ## license
