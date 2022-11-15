@@ -44,4 +44,5 @@ str::trunc("abcdefghijk", 6, "...") == "abcdef..."
 
 ## license
 
-MIT
+Copyright Justin Godesky.
+Released under the AGPLv3 License.
